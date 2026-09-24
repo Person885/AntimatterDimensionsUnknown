@@ -586,7 +586,7 @@ class AntimatterDimensionState extends DimensionState {
     const postBreak = (player.break && !NormalChallenge.isRunning) ||
       InfinityChallenge.isRunning ||
       Enslaved.isRunning;
-    return postBreak ? Decimal.dSafeMax : DC.E315;
+    return postBreak ? DC.dSafeMax : DC.E315;
   }
 
   get productionPerSecond() {
