@@ -373,11 +373,14 @@ export const Annihilation = {
       legacyAutoAchievementsCleared: player.annihilation.legacyAutoAchievementsCleared,
       unlocked: true,
     };
+    // I made it an array in case there are more post END celestials later
+    const savedCelestials = [player.celestials.annihilation];
     GameEnd.creditsClosed = false;
     GameEnd.creditsEverClosed = false;
     player.isGameEnd = false;
     player.celestials.pelle.doomed = false;
     NG.restartWithCarryover();
+    player.celestials.annihilation = savedCelestials[0];
     player.annihilation = savedAnnihilation;
     player.break = true;
     reapplyAnnihilatedDimensionPower();
