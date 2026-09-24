@@ -35,7 +35,7 @@ export default {
       this.resetRequirementText = Annihilation.hasAnnihilated
         ? formatAnnihilation(Annihilation.resetRequirement, 2)
         : "9ee15";
-      this.infinityColumnCost.copyFrom(Annihilation.infinityColumnCosts(0));
+      this.infinityColumnCost.copyFrom(Annihilation.infinityColumnCost(0));
     },
     annihilateDimension(tier) {
       Annihilation.annihilateDimension(tier);
