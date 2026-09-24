@@ -13,6 +13,7 @@ export default {
       canReset: false,
       resetRequirement: new Decimal(0),
       resetRequirementText: "",
+      infinityColumnCost: new Decimal(0),
     };
   },
   methods: {
@@ -34,6 +35,7 @@ export default {
       this.resetRequirementText = Annihilation.hasAnnihilated
         ? formatAnnihilation(Annihilation.resetRequirement, 2)
         : "9ee15";
+      this.infinityColumnCost.copyFrom(Annihilation.infinityColumnCosts(0));
     },
     annihilateDimension(tier) {
       Annihilation.annihilateDimension(tier);
@@ -116,7 +118,7 @@ export default {
       </template>
       <template v-else>
         Annihilate first Infinity Upgrade column<br>
-        Cost: {{ formatAnnihilation(Annihilation.infinityColumnCost(0), 2) }} Matter
+        Cost: {{ formatAnnihilation(infinityColumnCost, 2) }} Matter
       </template>
     </button>
   </div>
