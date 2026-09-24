@@ -327,12 +327,12 @@ export const Annihilation = {
 
   canAnnihilateInfinityColumn(column) {
     const upgrades = INFINITY_COLUMN_UPGRADES[column];
-    const cost = this.infinityColumnCost(column);
-    return this.dimensionCount >= 5 &&
+    const cost = Annihilation.infinityColumnCost(column);
+    return Annihilation.dimensionCount >= 5 &&
       upgrades?.length > 0 &&
       cost !== undefined &&
       !player.annihilation.infinityColumns[column] &&
-      this.matter.gte(cost);
+      Annihilation.matter.gte(cost);
   },
 
   annihilateInfinityColumn(column) {
